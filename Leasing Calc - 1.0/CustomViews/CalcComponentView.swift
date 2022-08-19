@@ -11,6 +11,7 @@ class CalcComponentView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupBackground()
         setupViews()
     }
     
@@ -20,64 +21,70 @@ class CalcComponentView: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .red
+        label.textColor = .systemGray2
+        label.font = .boldSystemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var minLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .green
+        label.textColor = .systemGray2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var maxLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .blue
+        label.textColor = .systemGray2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var currentValueLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .yellow
+        label.textColor = .white
+        label.font = .boldSystemFont(ofSize: 36)
+        label.lineBreakMode = .byTruncatingMiddle
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    private func setupBackground() {
+        backgroundColor = UIColor(red: 65.0/255.0, green: 76.0/255.0, blue: 81.0/255.0, alpha: 0.5)
+        layer.cornerRadius = 10
+    }
+    
     private func setupViews() {
         self.addSubview(nameLabel)
+        self.addSubview(currentValueLabel)
         self.addSubview(minLabel)
         self.addSubview(maxLabel)
-        self.addSubview(currentValueLabel)
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            nameLabel.heightAnchor.constraint(equalToConstant: 20),
-            nameLabel.widthAnchor.constraint(equalToConstant: 200)
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
-            minLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            minLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            minLabel.heightAnchor.constraint(equalToConstant: 20),
-            minLabel.widthAnchor.constraint(equalToConstant: 200)
+            currentValueLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            currentValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            currentValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
-            maxLabel.topAnchor.constraint(equalTo: minLabel.bottomAnchor),
-            maxLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            maxLabel.heightAnchor.constraint(equalToConstant: 20),
-            maxLabel.widthAnchor.constraint(equalToConstant: 200)
+            minLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            minLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
+        ])
+
+        NSLayoutConstraint.activate([
+            maxLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            maxLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -15)
+            
         ])
         
-        NSLayoutConstraint.activate([
-            currentValueLabel.topAnchor.constraint(equalTo: maxLabel.bottomAnchor),
-            currentValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            currentValueLabel.heightAnchor.constraint(equalToConstant: 20),
-            currentValueLabel.widthAnchor.constraint(equalToConstant: 200)
-        ])
+       
     }
 }

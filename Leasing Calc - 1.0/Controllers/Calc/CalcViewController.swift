@@ -21,15 +21,18 @@ class CalcViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             customView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            customView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            customView.heightAnchor.constraint(equalToConstant: 200),
-            customView.widthAnchor.constraint(equalToConstant: 200)
+            customView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            customView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            customView.heightAnchor.constraint(equalToConstant: 160)
         ])
         
-        customView.nameLabel.text = "NAME LABEL"
+        customView.nameLabel.text = "NECESITAS PAGAR"
+        customView.currentValueLabel.text = "10 000 000 на 60 месяцев"
+        customView.minLabel.text = "LEFT"
+        customView.maxLabel.text = "RIGHT"
     }
     
     private func setupViewControllerDesign() {
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
 }
