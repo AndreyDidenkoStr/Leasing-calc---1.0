@@ -33,7 +33,8 @@ class CalcViewController: UIViewController {
     }
     
     func new() {
-        
+        print("new")
+        print("new")
     }
     
     private func setupViewControllerDesign() {
