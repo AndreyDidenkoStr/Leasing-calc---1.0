@@ -7,19 +7,21 @@
 
 import UIKit
 
-class CalcComponentView: UIView {
+class CalcComponentView: UIView, UITextFieldDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBackground()
         setupViews()
+        priceTextField.delegate = self
+        termTextField.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var nameLabel: UILabel = {
+    lazy var termTitlelabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray2
         label.font = .boldSystemFont(ofSize: 12)
@@ -27,28 +29,40 @@ class CalcComponentView: UIView {
         return label
     }()
     
-    lazy var minLabel: UILabel = {
+    lazy var priceTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray2
+        label.font = .boldSystemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var maxLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemGray2
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    lazy var priceTextField: UITextField = {
+        let tf = UITextField()
+        tf.textColor = .white
+        tf.font = .boldSystemFont(ofSize: 36)
+        tf.keyboardType = .numberPad
+        tf.addTarget(self, action: #selector(self.textFieldFilter), for: .editingChanged)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
     }()
     
-    lazy var currentValueLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 36)
-        label.lineBreakMode = .byTruncatingMiddle
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    @objc private func textFieldFilter(_ textField: UITextField) {
+      if let text = textField.text, let intText = Int(text) {
+        textField.text = "\(intText)"
+      } else {
+        textField.text = ""
+      }
+    }
+    
+    lazy var termTextField: UITextField = {
+        let tf = UITextField()
+        tf.textColor = .white
+        tf.font = .boldSystemFont(ofSize: 36)
+        tf.keyboardType = .numberPad
+        tf.addTarget(self, action: #selector(self.textFieldFilter), for: .editingChanged)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
     }()
     
     private func setupBackground() {
@@ -57,34 +71,76 @@ class CalcComponentView: UIView {
     }
     
     private func setupViews() {
-        self.addSubview(nameLabel)
-        self.addSubview(currentValueLabel)
-        self.addSubview(minLabel)
-        self.addSubview(maxLabel)
+        self.addSubview(priceTextField)
+        self.addSubview(termTextField)
+        self.addSubview(termTitlelabel)
+        self.addSubview(priceTitleLabel)
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
+            priceTextField.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            priceTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            priceTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
         
         NSLayoutConstraint.activate([
-            currentValueLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            currentValueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            currentValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
+            priceTitleLabel.topAnchor.constraint(equalTo: priceTextField.bottomAnchor, constant: 2),
+            priceTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  15)
         ])
         
         NSLayoutConstraint.activate([
-            minLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            minLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
+            termTextField.topAnchor.constraint(equalTo: priceTitleLabel.bottomAnchor, constant: 5),
+            termTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            termTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
         ])
 
         NSLayoutConstraint.activate([
-            maxLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            maxLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant:  -15)
-            
+            termTitlelabel.topAnchor.constraint(equalTo: termTextField.bottomAnchor, constant: 2),
+            termTitlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
         ])
-        
-       
     }
+    
+    private func textLimit(existingText: String?,
+                           newText: String,
+                           limit: Int) -> Bool {
+        let text = existingText ?? ""
+        let isAtLimit = text.count + newText.count <= limit
+        return isAtLimit
+    }
+}
+
+extension CalcComponentView {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == priceTextField {
+            if range.location < 10 {
+                let allowedCharacters = CharacterSet(charactersIn:"0123456789")
+                let characterSet = CharacterSet(charactersIn: string)
+                return allowedCharacters.isSuperset(of: characterSet)
+            } else {
+                return false
+            }
+        } else if textField == termTextField {
+            if range.location < 2 {
+                let allowedCharacters = CharacterSet(charactersIn:"0123456789")
+                let characterSet = CharacterSet(charactersIn: string)
+                return allowedCharacters.isSuperset(of: characterSet)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+}
+
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        return formatter
+    }()
+}
+
+extension Numeric {
+    var formattedWithSeparator: String { Formatter.withSeparator.string(for: self) ?? "" }
 }

@@ -26,10 +26,10 @@ class CalcViewController: UIViewController {
             customView.heightAnchor.constraint(equalToConstant: 160)
         ])
         
-        customView.nameLabel.text = "NECESITAS PAGAR"
-        customView.currentValueLabel.text = "10 000 000 на 60 месяцев"
-        customView.minLabel.text = "LEFT"
-        customView.maxLabel.text = "RIGHT"
+        customView.priceTextField.placeholder = "100 000 000"
+        customView.termTitlelabel.text = "СРОК ЛИЗИНГА, МЕСЯЦ"
+        customView.termTextField.placeholder = "60"
+        customView.priceTitleLabel.text = "ЦЕНА ТРАНСПОРТА, ₽"
     }
     
     private func setupViewControllerDesign() {
