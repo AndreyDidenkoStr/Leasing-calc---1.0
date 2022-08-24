@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalcComponentView: UIView, UITextFieldDelegate {
+final class CalcComponentView: UIView, UITextFieldDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
