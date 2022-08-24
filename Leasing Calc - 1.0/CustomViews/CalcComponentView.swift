@@ -20,6 +20,19 @@ class CalcComponentView: UIView, UITextFieldDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.distribution = .equalSpacing
+        sv.spacing = 5
+        sv.alignment = .leading
+        sv.addArrangedSubview(priceTextField)
+        sv.addArrangedSubview(priceTitleLabel)
+        sv.addArrangedSubview(termTextField)
+        sv.addArrangedSubview(termTitlelabel)
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
     
     lazy var termTitlelabel: UILabel = {
         let label = UILabel()
@@ -71,31 +84,13 @@ class CalcComponentView: UIView, UITextFieldDelegate {
     }
     
     private func setupViews() {
-        self.addSubview(priceTextField)
-        self.addSubview(termTextField)
-        self.addSubview(termTitlelabel)
-        self.addSubview(priceTitleLabel)
+        self.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            priceTextField.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            priceTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            priceTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
-        ])
-        
-        NSLayoutConstraint.activate([
-            priceTitleLabel.topAnchor.constraint(equalTo: priceTextField.bottomAnchor, constant: 2),
-            priceTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant:  15)
-        ])
-        
-        NSLayoutConstraint.activate([
-            termTextField.topAnchor.constraint(equalTo: priceTitleLabel.bottomAnchor, constant: 5),
-            termTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            termTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15)
-        ])
-
-        NSLayoutConstraint.activate([
-            termTitlelabel.topAnchor.constraint(equalTo: termTextField.bottomAnchor, constant: 2),
-            termTitlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15)
         ])
     }
     

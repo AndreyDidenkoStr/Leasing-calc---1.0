@@ -32,11 +32,6 @@ class CalcViewController: UIViewController {
         customView.priceTitleLabel.text = "ЦЕНА ТРАНСПОРТА, ₽"
     }
     
-    func new() {
-        print("new")
-        print("new")
-    }
-    
     private func setupViewControllerDesign() {
         view.backgroundColor = .black
     }
