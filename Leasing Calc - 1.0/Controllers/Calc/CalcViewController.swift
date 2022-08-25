@@ -44,10 +44,16 @@ class CalcViewController: UIViewController {
         return label
     }()
     
+    let testView: TestComponentView = {
+        let view = TestComponentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllerDesign()
-        
+        view.addSubview(testView)
         view.addSubview(nameAccountLabel)
         view.addSubview(calcView)
         view.addSubview(summResultView)
@@ -60,6 +66,7 @@ class CalcViewController: UIViewController {
     }
     
     private func setupConstraints() {
+        
         NSLayoutConstraint.activate([
             nameAccountLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             nameAccountLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
@@ -86,6 +93,13 @@ class CalcViewController: UIViewController {
             monthResultView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             monthResultView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             monthResultView.heightAnchor.constraint(equalToConstant: 90)
+        ])
+        
+        NSLayoutConstraint.activate([
+            testView.topAnchor.constraint(equalTo: monthResultView.bottomAnchor, constant: 20),
+            testView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            testView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            testView.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
 }

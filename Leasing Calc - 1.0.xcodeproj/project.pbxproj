@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C58977828B81CC600490476 /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C58977728B81CC600490476 /* CalcViewModel.swift */; };
+		7C58977A28B81FA100490476 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C58977928B81FA100490476 /* TestView.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		7C58977728B81CC600490476 /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
+		7C58977928B81FA100490476 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				7CF7DD5728A6B8BA0044AAEB /* CalcComponentView.swift */,
 				7CD8E1FB28B6A88400236530 /* ResultComponentView.swift */,
+				7C58977928B81FA100490476 /* TestView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */,
 				7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */,
 				7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */,
+				7C58977A28B81FA100490476 /* TestView.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
 				7C58977828B81CC600490476 /* CalcViewModel.swift in Sources */,
