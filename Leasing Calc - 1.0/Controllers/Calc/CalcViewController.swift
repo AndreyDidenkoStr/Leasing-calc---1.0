@@ -53,8 +53,6 @@ class CalcViewController: UIViewController {
         view.addSubview(summResultView)
         view.addSubview(monthResultView)
         setupConstraints()
-        
-        
     }
     
     private func setupViewControllerDesign() {
