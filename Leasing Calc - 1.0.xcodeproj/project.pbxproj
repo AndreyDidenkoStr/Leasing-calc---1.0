@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C486A3F28B96F9800993148 /* CreditCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C486A3E28B96F9800993148 /* CreditCustomView.swift */; };
-		7C58977828B81CC600490476 /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C58977728B81CC600490476 /* CalcViewModel.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		7C486A3E28B96F9800993148 /* CreditCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCustomView.swift; sourceTree = "<group>"; };
-		7C58977728B81CC600490476 /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */,
-				7C58977728B81CC600490476 /* CalcViewModel.swift */,
 			);
 			path = Calc;
 			sourceTree = "<group>";
@@ -205,7 +202,6 @@
 				7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
-				7C58977828B81CC600490476 /* CalcViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
