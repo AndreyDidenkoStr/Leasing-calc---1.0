@@ -7,29 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C486A3F28B96F9800993148 /* CreditCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C486A3E28B96F9800993148 /* CreditCustomView.swift */; };
+		0564A1FCF5A408D71A8D3474 /* MainModuleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18783EC34B7A0823944FD17B /* MainModuleViewController.storyboard */; };
+		20CE21EFE241CC71D7C8995A /* MainModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09734882B799286C888BAACB /* MainModuleRouter.swift */; };
+		4C4EE146A12BC428FA32A5DD /* MainModuleModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E514A21B19694662A6FA1008 /* MainModuleModuleInput.swift */; };
+		4D4B5C1F61A75EE2D3751FBB /* MainModuleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676CF656A411109364D87FB /* MainModuleViewOutput.swift */; };
+		528B52046C2C6F9D573200CB /* MainModuleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC99D391121E2B4BB2526A43 /* MainModuleViewInput.swift */; };
+		6C4F3D38E1186E79C2919EAD /* MainModuleRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8785B256BDD52FE60E15B /* MainModuleRouterInput.swift */; };
+		7C6EBE2828BEB31E00997E05 /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6EBE2728BEB31E00997E05 /* ModuleTransitionable.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
 		7C9D2F3728A65D78002E3ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */; };
-		7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3E28A68436002E3ACE /* TabBarController.swift */; };
-		7C9D2F4228A688BE002E3ACE /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */; };
-		7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */; };
-		7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */; };
+		9BBF89B05CB5346B549FBD72 /* MainModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D57B8A9813B88D962656C3 /* MainModulePresenter.swift */; };
+		A95256E4714C1C123A0B2FE6 /* MainModuleModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2837AF35B375CF9F96E1C053 /* MainModuleModuleOutput.swift */; };
+		BA051DA648EA2F126392EC8C /* MainModuleModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3873BDBD2684319CA6500F65 /* MainModuleModuleConfigurator.swift */; };
+		E73B2B471F6827B5AE1F884B /* MainModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC0A11C6A5738E89156E09 /* MainModuleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C486A3E28B96F9800993148 /* CreditCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCustomView.swift; sourceTree = "<group>"; };
+		09734882B799286C888BAACB /* MainModuleRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleRouter.swift; sourceTree = "<group>"; };
+		18783EC34B7A0823944FD17B /* MainModuleViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = MainModuleViewController.storyboard; sourceTree = "<group>"; };
+		2837AF35B375CF9F96E1C053 /* MainModuleModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleModuleOutput.swift; sourceTree = "<group>"; };
+		3873BDBD2684319CA6500F65 /* MainModuleModuleConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleModuleConfigurator.swift; sourceTree = "<group>"; };
+		6AFC0A11C6A5738E89156E09 /* MainModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleViewController.swift; sourceTree = "<group>"; };
+		7C6EBE2728BEB31E00997E05 /* ModuleTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F3328A65D78002E3ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C9D2F3628A65D78002E3ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C9D2F3828A65D78002E3ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C9D2F3E28A68436002E3ACE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewController.swift; sourceTree = "<group>"; };
-		7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		7EB8785B256BDD52FE60E15B /* MainModuleRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleRouterInput.swift; sourceTree = "<group>"; };
+		A676CF656A411109364D87FB /* MainModuleViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleViewOutput.swift; sourceTree = "<group>"; };
+		AC99D391121E2B4BB2526A43 /* MainModuleViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleViewInput.swift; sourceTree = "<group>"; };
+		B4D57B8A9813B88D962656C3 /* MainModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModulePresenter.swift; sourceTree = "<group>"; };
+		E514A21B19694662A6FA1008 /* MainModuleModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainModuleModuleInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AE5AF7277CD5D2774489C3D /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				3873BDBD2684319CA6500F65 /* MainModuleModuleConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		23B897B51D489D6CB95AC811 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				09734882B799286C888BAACB /* MainModuleRouter.swift */,
+				7EB8785B256BDD52FE60E15B /* MainModuleRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		338CC3AAD2F2069F1726D7CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AFC0A11C6A5738E89156E09 /* MainModuleViewController.swift */,
+				18783EC34B7A0823944FD17B /* MainModuleViewController.storyboard */,
+				AC99D391121E2B4BB2526A43 /* MainModuleViewInput.swift */,
+				A676CF656A411109364D87FB /* MainModuleViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		560C8796A06C8D9D9E021F6B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B4D57B8A9813B88D962656C3 /* MainModulePresenter.swift */,
+				E514A21B19694662A6FA1008 /* MainModuleModuleInput.swift */,
+				2837AF35B375CF9F96E1C053 /* MainModuleModuleOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		77A1F815A68B6BDAF26F2E1D /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5AF7277CD5D2774489C3D /* Configurator */,
+				23B897B51D489D6CB95AC811 /* Router */,
+				560C8796A06C8D9D9E021F6B /* Presenter */,
+				338CC3AAD2F2069F1726D7CB /* View */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
 		7C9D2F1B28A65D77002E3ACE = {
 			isa = PBXGroup;
 			children = (
@@ -64,65 +125,13 @@
 			children = (
 				7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */,
 				7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */,
-				7CF7DD4C28A6B11F0044AAEB /* Modules */,
-				7C9D2F4028A688A0002E3ACE /* Controllers */,
 				7C9D2F3328A65D78002E3ACE /* Assets.xcassets */,
-				7CF7DD5628A6B7E00044AAEB /* CustomViews */,
 				7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */,
 				7C9D2F3828A65D78002E3ACE /* Info.plist */,
+				7C6EBE2728BEB31E00997E05 /* ModuleTransitionable.swift */,
+				77A1F815A68B6BDAF26F2E1D /* MainModule */,
 			);
 			path = "Leasing Calc - 1.0";
-			sourceTree = "<group>";
-		};
-		7C9D2F4028A688A0002E3ACE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F3E28A68436002E3ACE /* TabBarController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7CF7DD4C28A6B11F0044AAEB /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				7CF7DD4D28A6B16D0044AAEB /* Calc */,
-				7CF7DD4E28A6B17A0044AAEB /* Detail */,
-				7CF7DD4F28A6B1830044AAEB /* Order */,
-			);
-			name = Modules;
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7CF7DD4D28A6B16D0044AAEB /* Calc */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */,
-			);
-			path = Calc;
-			sourceTree = "<group>";
-		};
-		7CF7DD4E28A6B17A0044AAEB /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		7CF7DD4F28A6B1830044AAEB /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
-		7CF7DD5628A6B7E00044AAEB /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				7C486A3E28B96F9800993148 /* CreditCustomView.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +194,7 @@
 			files = (
 				7C9D2F3728A65D78002E3ACE /* LaunchScreen.storyboard in Resources */,
 				7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */,
+				0564A1FCF5A408D71A8D3474 /* MainModuleViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,13 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9D2F4228A688BE002E3ACE /* CalcViewController.swift in Sources */,
-				7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */,
-				7C486A3F28B96F9800993148 /* CreditCustomView.swift in Sources */,
-				7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */,
-				7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
+				7C6EBE2828BEB31E00997E05 /* ModuleTransitionable.swift in Sources */,
+				BA051DA648EA2F126392EC8C /* MainModuleModuleConfigurator.swift in Sources */,
+				20CE21EFE241CC71D7C8995A /* MainModuleRouter.swift in Sources */,
+				6C4F3D38E1186E79C2919EAD /* MainModuleRouterInput.swift in Sources */,
+				9BBF89B05CB5346B549FBD72 /* MainModulePresenter.swift in Sources */,
+				4C4EE146A12BC428FA32A5DD /* MainModuleModuleInput.swift in Sources */,
+				A95256E4714C1C123A0B2FE6 /* MainModuleModuleOutput.swift in Sources */,
+				E73B2B471F6827B5AE1F884B /* MainModuleViewController.swift in Sources */,
+				528B52046C2C6F9D573200CB /* MainModuleViewInput.swift in Sources */,
+				4D4B5C1F61A75EE2D3751FBB /* MainModuleViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
