@@ -7,27 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C320B1D28C4C19900891F29 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C320B1C28C4C19900891F29 /* MainViewController.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
 		7C9D2F3728A65D78002E3ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */; };
-		7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3E28A68436002E3ACE /* TabBarController.swift */; };
-		7C9D2F4228A688BE002E3ACE /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */; };
-		7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */; };
-		7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C320B1C28C4C19900891F29 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F3328A65D78002E3ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C9D2F3628A65D78002E3ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C9D2F3828A65D78002E3ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C9D2F3E28A68436002E3ACE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewController.swift; sourceTree = "<group>"; };
-		7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +35,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C320B1A28C4C16000891F29 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7C320B1B28C4C18800891F29 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7C320B1B28C4C18800891F29 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7C320B1C28C4C19900891F29 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		7C9D2F1B28A65D77002E3ACE = {
 			isa = PBXGroup;
 			children = (
@@ -62,56 +72,12 @@
 			children = (
 				7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */,
 				7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */,
-				7CF7DD4C28A6B11F0044AAEB /* Modules */,
-				7C9D2F4028A688A0002E3ACE /* Controllers */,
+				7C320B1A28C4C16000891F29 /* Modules */,
 				7C9D2F3328A65D78002E3ACE /* Assets.xcassets */,
 				7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */,
 				7C9D2F3828A65D78002E3ACE /* Info.plist */,
 			);
 			path = "Leasing Calc - 1.0";
-			sourceTree = "<group>";
-		};
-		7C9D2F4028A688A0002E3ACE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F3E28A68436002E3ACE /* TabBarController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7CF7DD4C28A6B11F0044AAEB /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				7CF7DD4D28A6B16D0044AAEB /* Calc */,
-				7CF7DD4E28A6B17A0044AAEB /* Detail */,
-				7CF7DD4F28A6B1830044AAEB /* Order */,
-			);
-			name = Modules;
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7CF7DD4D28A6B16D0044AAEB /* Calc */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4128A688BE002E3ACE /* CalcViewController.swift */,
-			);
-			path = Calc;
-			sourceTree = "<group>";
-		};
-		7CF7DD4E28A6B17A0044AAEB /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4328A688E9002E3ACE /* DetailViewController.swift */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		7CF7DD4F28A6B1830044AAEB /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */,
-			);
-			path = Order;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9D2F4228A688BE002E3ACE /* CalcViewController.swift in Sources */,
-				7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */,
-				7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */,
-				7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */,
+				7C320B1D28C4C19900891F29 /* MainViewController.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
 			);
