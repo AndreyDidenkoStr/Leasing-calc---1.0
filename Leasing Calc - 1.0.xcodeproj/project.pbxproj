@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C486A3F28B96F9800993148 /* CreditCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C486A3E28B96F9800993148 /* CreditCustomView.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C486A3E28B96F9800993148 /* CreditCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCustomView.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				7CF7DD4C28A6B11F0044AAEB /* Modules */,
 				7C9D2F4028A688A0002E3ACE /* Controllers */,
 				7C9D2F3328A65D78002E3ACE /* Assets.xcassets */,
-				7CF7DD5628A6B7E00044AAEB /* CustomViews */,
 				7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */,
 				7C9D2F3828A65D78002E3ACE /* Info.plist */,
 			);
@@ -115,14 +112,6 @@
 				7C9D2F4528A688F6002E3ACE /* OrderViewController.swift */,
 			);
 			path = Order;
-			sourceTree = "<group>";
-		};
-		7CF7DD5628A6B7E00044AAEB /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				7C486A3E28B96F9800993148 /* CreditCustomView.swift */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +186,6 @@
 			files = (
 				7C9D2F4228A688BE002E3ACE /* CalcViewController.swift in Sources */,
 				7C9D2F3F28A68436002E3ACE /* TabBarController.swift in Sources */,
-				7C486A3F28B96F9800993148 /* CreditCustomView.swift in Sources */,
 				7C9D2F4628A688F6002E3ACE /* OrderViewController.swift in Sources */,
 				7C9D2F4428A688E9002E3ACE /* DetailViewController.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
