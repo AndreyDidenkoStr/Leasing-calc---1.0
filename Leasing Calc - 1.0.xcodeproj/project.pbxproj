@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C320B1D28C4C19900891F29 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C320B1C28C4C19900891F29 /* MainViewController.swift */; };
+		7C320B2028C4C72600891F29 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C320B1F28C4C72600891F29 /* TabBarModel.swift */; };
+		7C50173328D0A5CA0077DC9E /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173228D0A5CA0077DC9E /* TabBarConfigurator.swift */; };
+		7C50173828D0AA7F0077DC9E /* OrderModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173728D0AA7F0077DC9E /* OrderModuleConfigurator.swift */; };
+		7C50173A28D0AE1A0077DC9E /* ListModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173928D0AE1A0077DC9E /* ListModuleConfigurator.swift */; };
+		7C50173C28D0AE290077DC9E /* MainModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173B28D0AE290077DC9E /* MainModuleConfigurator.swift */; };
+		7C50173E28D0AF060077DC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173D28D0AF060077DC9E /* MainViewController.swift */; };
+		7C50174028D0B00E0077DC9E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173F28D0B00E0077DC9E /* ListViewController.swift */; };
+		7C50174228D0B0230077DC9E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174128D0B0230077DC9E /* OrderViewController.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
@@ -15,7 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C320B1C28C4C19900891F29 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7C320B1F28C4C72600891F29 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		7C50173228D0A5CA0077DC9E /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
+		7C50173728D0AA7F0077DC9E /* OrderModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModuleConfigurator.swift; sourceTree = "<group>"; };
+		7C50173928D0AE1A0077DC9E /* ListModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleConfigurator.swift; sourceTree = "<group>"; };
+		7C50173B28D0AE290077DC9E /* MainModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleConfigurator.swift; sourceTree = "<group>"; };
+		7C50173D28D0AF060077DC9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7C50173F28D0B00E0077DC9E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7C50174128D0B0230077DC9E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,17 +52,48 @@
 		7C320B1A28C4C16000891F29 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				7C320B1B28C4C18800891F29 /* Main */,
+				7C50173628D0AA5C0077DC9E /* OrderModule */,
+				7C50173528D0AA400077DC9E /* ListModule */,
+				7C50173428D0AA330077DC9E /* MainModule */,
+				7C320B1E28C4C70D00891F29 /* TabBarModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		7C320B1B28C4C18800891F29 /* Main */ = {
+		7C320B1E28C4C70D00891F29 /* TabBarModule */ = {
 			isa = PBXGroup;
 			children = (
-				7C320B1C28C4C19900891F29 /* MainViewController.swift */,
+				7C320B1F28C4C72600891F29 /* TabBarModel.swift */,
+				7C50173228D0A5CA0077DC9E /* TabBarConfigurator.swift */,
 			);
-			path = Main;
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		7C50173428D0AA330077DC9E /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C50173B28D0AE290077DC9E /* MainModuleConfigurator.swift */,
+				7C50173D28D0AF060077DC9E /* MainViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		7C50173528D0AA400077DC9E /* ListModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C50173928D0AE1A0077DC9E /* ListModuleConfigurator.swift */,
+				7C50173F28D0B00E0077DC9E /* ListViewController.swift */,
+			);
+			path = ListModule;
+			sourceTree = "<group>";
+		};
+		7C50173628D0AA5C0077DC9E /* OrderModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C50173728D0AA7F0077DC9E /* OrderModuleConfigurator.swift */,
+				7C50174128D0B0230077DC9E /* OrderViewController.swift */,
+			);
+			path = OrderModule;
 			sourceTree = "<group>";
 		};
 		7C9D2F1B28A65D77002E3ACE = {
@@ -150,9 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C320B1D28C4C19900891F29 /* MainViewController.swift in Sources */,
+				7C50173328D0A5CA0077DC9E /* TabBarConfigurator.swift in Sources */,
+				7C50174228D0B0230077DC9E /* OrderViewController.swift in Sources */,
+				7C320B2028C4C72600891F29 /* TabBarModel.swift in Sources */,
+				7C50173828D0AA7F0077DC9E /* OrderModuleConfigurator.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
+				7C50173C28D0AE290077DC9E /* MainModuleConfigurator.swift in Sources */,
+				7C50174028D0B00E0077DC9E /* ListViewController.swift in Sources */,
+				7C50173E28D0AF060077DC9E /* MainViewController.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
+				7C50173A28D0AE1A0077DC9E /* ListModuleConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

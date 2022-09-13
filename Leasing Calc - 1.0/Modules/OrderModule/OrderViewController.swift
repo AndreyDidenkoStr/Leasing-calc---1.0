@@ -1,13 +1,13 @@
 //
-//  MainViewController.swift
+//  OrderViewController.swift
 //  Leasing Calc - 1.0
 //
-//  Created by Andrey Kapitalov on 04.09.2022.
+//  Created by Andrey Kapitalov on 13.09.2022.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class OrderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
