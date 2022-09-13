@@ -15,6 +15,12 @@
 		7C50173E28D0AF060077DC9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173D28D0AF060077DC9E /* MainViewController.swift */; };
 		7C50174028D0B00E0077DC9E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50173F28D0B00E0077DC9E /* ListViewController.swift */; };
 		7C50174228D0B0230077DC9E /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174128D0B0230077DC9E /* OrderViewController.swift */; };
+		7C50174428D0C7830077DC9E /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174328D0C7830077DC9E /* MainRouter.swift */; };
+		7C50174628D0C7B60077DC9E /* MainRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174528D0C7B60077DC9E /* MainRouterInput.swift */; };
+		7C50174828D0C8550077DC9E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174728D0C8550077DC9E /* MainPresenter.swift */; };
+		7C50174A28D0C8CB0077DC9E /* MainViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174928D0C8CB0077DC9E /* MainViewInput.swift */; };
+		7C50174C28D0C8F40077DC9E /* MainViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174B28D0C8F40077DC9E /* MainViewOutput.swift */; };
+		7C50174E28D0CB590077DC9E /* ModuleTransitionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50174D28D0CB590077DC9E /* ModuleTransitionable.swift */; };
 		7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */; };
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
@@ -30,6 +36,12 @@
 		7C50173D28D0AF060077DC9E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7C50173F28D0B00E0077DC9E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7C50174128D0B0230077DC9E /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		7C50174328D0C7830077DC9E /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		7C50174528D0C7B60077DC9E /* MainRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInput.swift; sourceTree = "<group>"; };
+		7C50174728D0C8550077DC9E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		7C50174928D0C8CB0077DC9E /* MainViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInput.swift; sourceTree = "<group>"; };
+		7C50174B28D0C8F40077DC9E /* MainViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutput.swift; sourceTree = "<group>"; };
+		7C50174D28D0CB590077DC9E /* ModuleTransitionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTransitionable.swift; sourceTree = "<group>"; };
 		7C9D2F2428A65D77002E3ACE /* Leasing Calc - 1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leasing Calc - 1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D2F2728A65D77002E3ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +68,7 @@
 				7C50173528D0AA400077DC9E /* ListModule */,
 				7C50173428D0AA330077DC9E /* MainModule */,
 				7C320B1E28C4C70D00891F29 /* TabBarModule */,
+				7C50174D28D0CB590077DC9E /* ModuleTransitionable.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -74,6 +87,11 @@
 			children = (
 				7C50173B28D0AE290077DC9E /* MainModuleConfigurator.swift */,
 				7C50173D28D0AF060077DC9E /* MainViewController.swift */,
+				7C50174728D0C8550077DC9E /* MainPresenter.swift */,
+				7C50174928D0C8CB0077DC9E /* MainViewInput.swift */,
+				7C50174B28D0C8F40077DC9E /* MainViewOutput.swift */,
+				7C50174328D0C7830077DC9E /* MainRouter.swift */,
+				7C50174528D0C7B60077DC9E /* MainRouterInput.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -201,9 +219,15 @@
 				7C50173828D0AA7F0077DC9E /* OrderModuleConfigurator.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C50173C28D0AE290077DC9E /* MainModuleConfigurator.swift in Sources */,
+				7C50174828D0C8550077DC9E /* MainPresenter.swift in Sources */,
 				7C50174028D0B00E0077DC9E /* ListViewController.swift in Sources */,
+				7C50174A28D0C8CB0077DC9E /* MainViewInput.swift in Sources */,
 				7C50173E28D0AF060077DC9E /* MainViewController.swift in Sources */,
+				7C50174E28D0CB590077DC9E /* ModuleTransitionable.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
+				7C50174C28D0C8F40077DC9E /* MainViewOutput.swift in Sources */,
+				7C50174428D0C7830077DC9E /* MainRouter.swift in Sources */,
+				7C50174628D0C7B60077DC9E /* MainRouterInput.swift in Sources */,
 				7C50173A28D0AE1A0077DC9E /* ListModuleConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
