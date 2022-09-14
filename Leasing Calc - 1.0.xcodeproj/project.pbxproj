@@ -25,6 +25,7 @@
 		7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D2F2928A65D77002E3ACE /* SceneDelegate.swift */; };
 		7C9D2F3428A65D78002E3ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3328A65D78002E3ACE /* Assets.xcassets */; };
 		7C9D2F3728A65D78002E3ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */; };
+		7CAF471528D2073700967EEE /* InfoElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF471428D2073700967EEE /* InfoElementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7C9D2F3328A65D78002E3ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C9D2F3628A65D78002E3ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C9D2F3828A65D78002E3ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CAF471428D2073700967EEE /* InfoElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoElementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +141,17 @@
 				7C9D2F3328A65D78002E3ACE /* Assets.xcassets */,
 				7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */,
 				7C9D2F3828A65D78002E3ACE /* Info.plist */,
+				7CAF471328D2071100967EEE /* Custom Views */,
 			);
 			path = "Leasing Calc - 1.0";
+			sourceTree = "<group>";
+		};
+		7CAF471328D2071100967EEE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CAF471428D2073700967EEE /* InfoElementView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				7C50174228D0B0230077DC9E /* OrderViewController.swift in Sources */,
 				7C320B2028C4C72600891F29 /* TabBarModel.swift in Sources */,
 				7C50173828D0AA7F0077DC9E /* OrderModuleConfigurator.swift in Sources */,
+				7CAF471528D2073700967EEE /* InfoElementView.swift in Sources */,
 				7C9D2F2828A65D77002E3ACE /* AppDelegate.swift in Sources */,
 				7C50173C28D0AE290077DC9E /* MainModuleConfigurator.swift in Sources */,
 				7C50174828D0C8550077DC9E /* MainPresenter.swift in Sources */,

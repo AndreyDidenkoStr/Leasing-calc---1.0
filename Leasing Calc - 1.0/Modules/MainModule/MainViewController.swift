@@ -10,10 +10,29 @@ import UIKit
 class MainViewController: UIViewController, ModuleTransitionable {
 
     var presenter: MainPresenter?
+    
+    var viewOne: InfoElementView = {
+        let view = InfoElementView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        view.addSubview(viewOne)
+        
+        NSLayoutConstraint.activate([
+            viewOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            viewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            viewOne.heightAnchor.constraint(equalToConstant: 400),
+            viewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
 
 }
 
 
 extension MainViewController: MainViewInput {
-    
+     
 }

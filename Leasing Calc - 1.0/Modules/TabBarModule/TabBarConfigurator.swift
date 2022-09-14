@@ -52,7 +52,7 @@ extension TabBarConfigurator {
             case .list:
                 return ListModuleConfigurator().configure()
             case .order:
-                return MainModuleConfigurator().configure()
+                return OrderModuleConfigurator().configure()
             }
         }
     
