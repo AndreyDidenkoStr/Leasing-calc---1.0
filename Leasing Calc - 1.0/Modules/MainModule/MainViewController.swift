@@ -24,9 +24,9 @@ class MainViewController: UIViewController, ModuleTransitionable {
         
         NSLayoutConstraint.activate([
             viewOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            viewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            viewOne.heightAnchor.constraint(equalToConstant: 400),
-            viewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            viewOne.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            viewOne.heightAnchor.constraint(equalToConstant: 280),
+            viewOne.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5)
         ])
     }
 

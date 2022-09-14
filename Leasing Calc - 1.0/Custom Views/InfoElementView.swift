@@ -101,7 +101,8 @@ class InfoElementView: UIView {
     // MARK: Functions
     
     func setupBackground() {
-        backgroundColor = .white
+        backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.04)
+        layer.cornerRadius = 10
     }
     
     func setupSubViews() {
@@ -159,26 +160,26 @@ class InfoElementView: UIView {
             termLabel.topAnchor.constraint(equalTo: prepaymentTextField.bottomAnchor, constant: 10),
             termLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             termLabel.heightAnchor.constraint(equalToConstant: 20),
-            termLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            termLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
             termTextField.topAnchor.constraint(equalTo: termLabel.bottomAnchor, constant: 5),
             termTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             termTextField.heightAnchor.constraint(equalToConstant: 40),
-            termTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            termTextField.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
-            percentLabel.topAnchor.constraint(equalTo: termTextField.bottomAnchor, constant: 10),
-            percentLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            percentLabel.topAnchor.constraint(equalTo: prepaymentTextField.bottomAnchor, constant: 10),
+            percentLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 5),
             percentLabel.heightAnchor.constraint(equalToConstant: 20),
             percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([
             percentTextField.topAnchor.constraint(equalTo: percentLabel.bottomAnchor, constant: 5),
-            percentTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            percentTextField.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 5),
             percentTextField.heightAnchor.constraint(equalToConstant: 40),
             percentTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
