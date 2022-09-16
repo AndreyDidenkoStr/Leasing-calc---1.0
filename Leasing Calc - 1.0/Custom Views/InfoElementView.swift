@@ -50,6 +50,8 @@ class InfoElementView: UIView {
     
     lazy var priceTextField: UITextField = {
         let tf = UITextField()
+        tf.delegate = self
+        tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
         tf.layer.cornerRadius = 10
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
@@ -59,6 +61,8 @@ class InfoElementView: UIView {
     }()
     lazy var prepaymentTextField: UITextField = {
         let tf = UITextField()
+        tf.delegate = self
+        tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
         tf.layer.cornerRadius = 10
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
@@ -68,6 +72,8 @@ class InfoElementView: UIView {
     }()
     lazy var termTextField: UITextField = {
         let tf = UITextField()
+        tf.delegate = self
+        tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
         tf.layer.cornerRadius = 10
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
@@ -77,6 +83,8 @@ class InfoElementView: UIView {
     }()
     lazy var percentTextField: UITextField = {
         let tf = UITextField()
+        tf.delegate = self
+        tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
         tf.layer.cornerRadius = 10
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
@@ -185,9 +193,48 @@ class InfoElementView: UIView {
         ])
         
     }
+}
+
+extension InfoElementView: UITextFieldDelegate {
     
-    
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        
+        //MARK: Разобраться с этим форматтером
+        
+        // Uses the number format corresponding to your Locale
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        formatter.maximumFractionDigits = 0
+        formatter.groupingSeparator = " "
+        
+        
+        // Uses the grouping separator corresponding to your Locale
+        // e.g. "," in the US, a space in France, and so on
+        if let groupingSeparator = formatter.groupingSeparator {
+            
+            if string == groupingSeparator {
+                return true
+            }
+            
+            if let textWithoutGroupingSeparator = textField.text?.replacingOccurrences(of: groupingSeparator, with: "") {
+                var totalTextWithoutGroupingSeparators = textWithoutGroupingSeparator + string
+                if string.isEmpty { // pressed Backspace key
+                    totalTextWithoutGroupingSeparators.removeLast()
+                }
+                if let numberWithoutGroupingSeparator = formatter.number(from: totalTextWithoutGroupingSeparators),
+                   let formattedText = formatter.string(from: numberWithoutGroupingSeparator) {
+                    
+                    textField.text = formattedText
+                    return false
+                }
+                
+            }
+        }
+        return true
+    }
     
     
 }
