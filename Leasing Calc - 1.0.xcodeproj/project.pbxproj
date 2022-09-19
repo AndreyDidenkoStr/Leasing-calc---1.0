@@ -27,6 +27,7 @@
 		7C9D2F3728A65D78002E3ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D2F3528A65D78002E3ACE /* LaunchScreen.storyboard */; };
 		7CAF471528D2073700967EEE /* InfoElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF471428D2073700967EEE /* InfoElementView.swift */; };
 		7CAF471828D22FF600967EEE /* InputFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF471728D22FF600967EEE /* InputFormatter.swift */; };
+		7CE22CBA28D5F20A00F4F22E /* PercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE22CB928D5F20A00F4F22E /* PercentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		7C9D2F3828A65D78002E3ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CAF471428D2073700967EEE /* InfoElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoElementView.swift; sourceTree = "<group>"; };
 		7CAF471728D22FF600967EEE /* InputFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormatter.swift; sourceTree = "<group>"; };
+		7CE22CB928D5F20A00F4F22E /* PercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				7CAF471428D2073700967EEE /* InfoElementView.swift */,
+				7CE22CB928D5F20A00F4F22E /* PercentView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				7C50174028D0B00E0077DC9E /* ListViewController.swift in Sources */,
 				7CAF471828D22FF600967EEE /* InputFormatter.swift in Sources */,
 				7C50174A28D0C8CB0077DC9E /* MainViewInput.swift in Sources */,
+				7CE22CBA28D5F20A00F4F22E /* PercentView.swift in Sources */,
 				7C50173E28D0AF060077DC9E /* MainViewController.swift in Sources */,
 				7C50174E28D0CB590077DC9E /* ModuleTransitionable.swift in Sources */,
 				7C9D2F2A28A65D77002E3ACE /* SceneDelegate.swift in Sources */,
