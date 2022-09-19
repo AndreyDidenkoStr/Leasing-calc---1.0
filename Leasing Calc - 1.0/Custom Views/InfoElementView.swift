@@ -12,6 +12,30 @@ class InfoElementView: UIView {
     
     // MARK: Properties
     
+    lazy var prepaymentTextFieldValue: UITextField = {
+        let tf = UITextField()
+        tf.delegate = self
+        tf.keyboardType = .numberPad
+        tf.textAlignment = .left
+        tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.layer.cornerRadius = 10
+        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.textAlignment = .center
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.isEnabled = false
+        return tf
+    }()
+    
+    lazy var slider: UISlider = {
+        let slider = UISlider()
+        slider.minimumValue = 0
+        slider.maximumValue = 50
+        slider.value = 25
+        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        return slider
+    }()
+    
     lazy var percentMarkLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .thin)
@@ -84,6 +108,7 @@ class InfoElementView: UIView {
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.isEnabled = false
         return tf
     }()
     lazy var termTextField: UITextField = {
@@ -144,9 +169,26 @@ class InfoElementView: UIView {
         addSubview(percentTextField)
         addSubview(prepaymentTextField)
         addSubview(termTextField)
+        
+        addSubview(slider)
+        addSubview(prepaymentTextFieldValue)
     }
     
     func setupConstraints() {
+        
+        NSLayoutConstraint.activate([
+            prepaymentTextFieldValue.topAnchor.constraint(equalTo: priceTextField.bottomAnchor, constant: 35),
+            prepaymentTextFieldValue.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 5),
+            prepaymentTextFieldValue.heightAnchor.constraint(equalToConstant: 40),
+            prepaymentTextFieldValue.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ])
+        
+        NSLayoutConstraint.activate([
+            slider.topAnchor.constraint(equalTo: prepaymentTextField.bottomAnchor, constant: 10),
+            slider.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            slider.heightAnchor.constraint(equalToConstant: 40),
+            slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ])
         
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
@@ -180,11 +222,11 @@ class InfoElementView: UIView {
             prepaymentTextField.topAnchor.constraint(equalTo: prepaymentLabel.bottomAnchor, constant: 5),
             prepaymentTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             prepaymentTextField.heightAnchor.constraint(equalToConstant: 40),
-            prepaymentTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            prepaymentTextField.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
-            termLabel.topAnchor.constraint(equalTo: prepaymentTextField.bottomAnchor, constant: 10),
+            termLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
             termLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             termLabel.heightAnchor.constraint(equalToConstant: 20),
             termLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -5)
@@ -198,7 +240,7 @@ class InfoElementView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            percentLabel.topAnchor.constraint(equalTo: prepaymentTextField.bottomAnchor, constant: 10),
+            percentLabel.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
             percentLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 5),
             percentLabel.heightAnchor.constraint(equalToConstant: 20),
             percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
@@ -226,6 +268,32 @@ class InfoElementView: UIView {
             monthMarkLabel.trailingAnchor.constraint(equalTo: termTextField.trailingAnchor)
         ])
     }
+    
+    @objc func sliderChanged(sender: UISlider) {
+        prepaymentTextField.text = String(format: "%.00f", slider.value) + "%"
+        changedPrepaument()
+       
+    }
+    
+    func changedPrepaument() {
+        
+        lazy var formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        formatter.maximumFractionDigits = 0
+        formatter.groupingSeparator = " "
+        
+        guard let value = priceTextField.text else { return }
+        guard let percent = prepaymentTextField.text else { return }
+        let val = value.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+        let per = percent.replacingOccurrences(of: "%", with: "", options: .literal, range: nil)
+        let stringValue = Int(val) ?? 0
+        let stringPercent = Int(per) ?? 1
+        print("value \(stringValue)")
+        print("Percent \(stringPercent)")
+        let prepaymentValue = (stringValue * stringPercent / 100)
+        prepaymentTextFieldValue.text = formatter.string(from: NSNumber(value: prepaymentValue))
+    }
 }
 
 extension InfoElementView: UITextFieldDelegate {
@@ -234,7 +302,9 @@ extension InfoElementView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         //MARK: Сработало с  ограничителями - сделать такую маску для разных текстФилдов по необходимым параметрам
+        
         if textField == priceTextField {
+            
             // Uses the number format corresponding to your Locale
             lazy var formatter = NumberFormatter()
             formatter.numberStyle = .decimal
@@ -263,28 +333,25 @@ extension InfoElementView: UITextFieldDelegate {
                        let formattedText = formatter.string(from: numberWithoutGroupingSeparator) {
                         
                         textField.text = formattedText
-                        
+                        sliderChanged(sender: slider)
                         return false
                     }
                 }
             }
-        } else if textField == prepaymentTextField {
-            // Uses the number format corresponding to your Locale
+        } else if textField == prepaymentTextFieldValue {
+
             lazy var formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.locale = Locale.current
             formatter.maximumFractionDigits = 0
             formatter.groupingSeparator = " "
-            
-            
-            // Uses the grouping separator corresponding to your Locale
-            // e.g. "," in the US, a space in France, and so on
+    
             if let groupingSeparator = formatter.groupingSeparator {
                 
                 if string == groupingSeparator {
                     return true
                 }
-                
+            
                 if let textWithoutGroupingSeparator = textField.text?.replacingOccurrences(of: groupingSeparator, with: "") {
                     var totalTextWithoutGroupingSeparators = textWithoutGroupingSeparator + string
                     if totalTextWithoutGroupingSeparators.count > 9 {

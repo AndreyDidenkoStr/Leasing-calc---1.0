@@ -54,9 +54,9 @@ class PercentView: UIView {
         
         NSLayoutConstraint.activate([
             slider.topAnchor.constraint(equalTo: label.bottomAnchor),
-            slider.leadingAnchor.constraint(equalTo: leadingAnchor),
+            slider.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
             slider.heightAnchor.constraint(equalToConstant: 40),
-            slider.trailingAnchor.constraint(equalTo: trailingAnchor)
+            slider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
         
     }
