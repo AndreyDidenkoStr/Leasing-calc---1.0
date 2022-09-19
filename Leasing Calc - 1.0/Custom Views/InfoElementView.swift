@@ -131,7 +131,6 @@ class InfoElementView: UIView {
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.isEnabled = false
         return tf
     }()
     
@@ -294,6 +293,14 @@ class InfoElementView: UIView {
         let prepaymentValue = (stringValue * stringPercent / 100)
         prepaymentTextFieldValue.text = formatter.string(from: NSNumber(value: prepaymentValue))
     }
+    let percentFormatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.minimumFractionDigits = 2
+        f.maximumFractionDigits = 2
+        f.numberStyle = .percent
+        f.locale = Locale(identifier: "en-US_POSIX")
+        return f
+    }()
 }
 
 extension InfoElementView: UITextFieldDelegate {
@@ -379,9 +386,29 @@ extension InfoElementView: UITextFieldDelegate {
             let count = textFieldText.count - substringToReplace.count + string.count
             return count <= 2
             
+        } else if textField == percentTextField {
+            
+            guard let oldText = textField.text else { return false }
+
+                    if string.isEmpty { // this means that backspace is pressed
+                        let oldDigits = textField.text?.digits
+                        // drops one digit every time backspace is pressed
+                        let newNumber = Double((oldDigits?.dropLast()) ?? "0.0") ?? 0
+                        
+                            textField.text = percentFormatter.string(for: newNumber / 10000)
+                        
+                    } else // something has been entered
+                        if let newNumber = Double(
+                                (oldText as NSString).replacingCharacters(in: range, with: string).digits
+                              ) {
+                        if newNumber <= 10000 {
+                        textField.text = percentFormatter.string(for: newNumber / 10000)
+                        }
+                    }
+                    return false
+            
         }
         return true
     }
-    
-    
 }
+
