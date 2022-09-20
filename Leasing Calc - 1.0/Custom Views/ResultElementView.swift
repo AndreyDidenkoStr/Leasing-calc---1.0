@@ -9,28 +9,28 @@ import UIKit
 
 class ResultElemetView: UIView {
     
-    lazy var spacer: UIView = {
+    private lazy var spacer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 0.145, green: 0.511, blue: 0.335, alpha: 0.2)
         return view
     }()
     
-    lazy var spacerTwo: UIView = {
+    private lazy var spacerTwo: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 0.145, green: 0.511, blue: 0.335, alpha: 0.2)
         return view
     }()
     
-    lazy var spacerThree: UIView = {
+    private lazy var spacerThree: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 0.145, green: 0.511, blue: 0.335, alpha: 0.2)
         return view
     }()
     
-    lazy var spacerFour: UIView = {
+    private lazy var spacerFour: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(red: 0.145, green: 0.511, blue: 0.335, alpha: 0.2)
@@ -76,7 +76,7 @@ class ResultElemetView: UIView {
     
     lazy var fullPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "12 000 000"
+        //label.text = "12 000 000"
         label.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .right
@@ -86,7 +86,7 @@ class ResultElemetView: UIView {
     
     lazy var monthPaymentLabel: UILabel = {
         let label = UILabel()
-        label.text = "120 000"
+        //label.text = "120 000"
         label.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .right
@@ -96,7 +96,7 @@ class ResultElemetView: UIView {
     
     lazy var fullNdsLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 100 000"
+        //label.text = "2 100 000"
         label.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .right
@@ -106,7 +106,7 @@ class ResultElemetView: UIView {
     
     lazy var fullIncomeTaxLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 100 000"
+        //label.text = "2 100 000"
         label.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .right

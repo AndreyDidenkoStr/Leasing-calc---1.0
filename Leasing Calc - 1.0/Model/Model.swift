@@ -48,7 +48,7 @@ struct CalculationModel {
         return result
     }
 
-    var fullNDS: String? {
+    var fullNDS: String {
         guard let fullPrice = Double(fullPriceContract) else { return "" }
         let nds = fullPrice * 0.166
         
@@ -56,13 +56,11 @@ struct CalculationModel {
         return resultNDS
     }
     
-    var monthNDS: String? {
-        guard let body = Double(bodyOfPay) else { return "" }
-        let term = Double(term.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)) ?? 0
-        let monthPay = body / term
-        let nds = monthPay * 1.166
+    var monthNDS: String {
+        guard let fullPrice = Double(fullPriceContract) else { return "" }
+        let nds = fullPrice * 0.166
         
-        
-        return String(nds)
+        let resultTax = String(nds)
+        return resultTax
     }
 }

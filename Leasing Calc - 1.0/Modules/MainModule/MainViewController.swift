@@ -74,7 +74,37 @@ class MainViewController: UIViewController, ModuleTransitionable {
     }
 
     @objc func buttonTapped(sender: UIButton) {
+        view.endEditing(true)
+        lazy var formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        formatter.maximumFractionDigits = 0
+        formatter.groupingSeparator = " "
+        
         print("button pressed")
+        let element = CalculationModel(id: nil,
+                                       price: viewOne.priceTextField.text ?? "",
+                                       prepayment: viewOne.prepaymentTextFieldValue.text ?? "",
+                                       term: viewOne.termTextField.text ?? "",
+                                       percent: viewOne.percentTextField.text ?? "")
+        
+        guard let numberWithoutGroupingSeparator = formatter.number(from: element.fullPriceContract) else { return }
+        let formattedTextOne = formatter.string(from: numberWithoutGroupingSeparator)
+        viewTwo.fullPriceLabel.text = "\(formattedTextOne ?? "") ₽"
+        
+        guard let numberWithoutGroupingSeparator = formatter.number(from: element.monthPayment) else { return }
+        let formattedText = formatter.string(from: numberWithoutGroupingSeparator)
+        viewTwo.monthPaymentLabel.text = "\(formattedText ?? "") ₽"
+        
+        guard let numberWithoutGroupingSeparator = formatter.number(from: element.fullNDS) else { return }
+        let formattedTextSecond = formatter.string(from: numberWithoutGroupingSeparator)
+        viewTwo.fullNdsLabel.text = "\(formattedTextSecond ?? "") ₽"
+        
+        guard let numberWithoutGroupingSeparator = formatter.number(from: element.monthNDS) else { return }
+        let formattedTextFour = formatter.string(from: numberWithoutGroupingSeparator)
+        viewTwo.fullIncomeTaxLabel.text = "\(formattedTextFour ?? "") ₽"
+        
+        
     }
 }
 
