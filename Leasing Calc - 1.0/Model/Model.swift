@@ -10,6 +10,8 @@ import Foundation
 
 struct CalculationModel {
     
+    let id : UUID?
+    
     var price: String
     var prepayment: String
     var term: String

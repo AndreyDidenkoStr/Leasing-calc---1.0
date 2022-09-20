@@ -18,8 +18,9 @@ class InfoElementView: UIView {
         tf.keyboardType = .numberPad
         tf.textAlignment = .left
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         tf.layer.cornerRadius = 10
-        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.font = .systemFont(ofSize: 25, weight: .light)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.isEnabled = false
@@ -101,8 +102,9 @@ class InfoElementView: UIView {
         tf.delegate = self
         tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         tf.layer.cornerRadius = 10
-        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.font = .systemFont(ofSize: 25, weight: .light)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -112,8 +114,9 @@ class InfoElementView: UIView {
         tf.delegate = self
         tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         tf.layer.cornerRadius = 10
-        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.font = .systemFont(ofSize: 25, weight: .light)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.isEnabled = false
@@ -124,8 +127,9 @@ class InfoElementView: UIView {
         tf.delegate = self
         tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         tf.layer.cornerRadius = 10
-        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.font = .systemFont(ofSize: 25, weight: .light)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -135,8 +139,9 @@ class InfoElementView: UIView {
         tf.delegate = self
         tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
+        tf.textColor = UIColor(red: 0.145, green: 0.311, blue: 0.535, alpha: 0.8)
         tf.layer.cornerRadius = 10
-        tf.font = .systemFont(ofSize: 25, weight: .semibold)
+        tf.font = .systemFont(ofSize: 25, weight: .light)
         tf.textAlignment = .center
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
