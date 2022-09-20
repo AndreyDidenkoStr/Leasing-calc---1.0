@@ -36,10 +36,18 @@ class InfoElementView: UIView {
         return slider
     }()
     
-    lazy var percentMarkLabel: UILabel = {
+    lazy var roubleMarkLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .thin)
-        label.text = "%"
+        label.text = "₽"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var roubleMarkLabelTwo: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .thin)
+        label.text = "₽"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -125,7 +133,7 @@ class InfoElementView: UIView {
     lazy var percentTextField: UITextField = {
         let tf = UITextField()
         tf.delegate = self
-        tf.keyboardType = .decimalPad
+        tf.keyboardType = .numberPad
         tf.backgroundColor = UIColor(red: 0.145, green: 0.211, blue: 0.235, alpha: 0.1)
         tf.layer.cornerRadius = 10
         tf.font = .systemFont(ofSize: 25, weight: .semibold)
@@ -156,7 +164,8 @@ class InfoElementView: UIView {
     
     func setupSubViews() {
         addSubview(nameLabel)
-        addSubview(percentMarkLabel)
+        addSubview(roubleMarkLabel)
+        addSubview(roubleMarkLabelTwo)
         addSubview(monthMarkLabel)
         
         addSubview(priceLabel)
@@ -253,10 +262,17 @@ class InfoElementView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            percentMarkLabel.topAnchor.constraint(equalTo: percentTextField.topAnchor),
-            percentMarkLabel.widthAnchor.constraint(equalToConstant: 30),
-            percentMarkLabel.bottomAnchor.constraint(equalTo: percentTextField.bottomAnchor),
-            percentMarkLabel.trailingAnchor.constraint(equalTo: percentTextField.trailingAnchor)
+            roubleMarkLabel.topAnchor.constraint(equalTo: priceTextField.topAnchor),
+            roubleMarkLabel.widthAnchor.constraint(equalToConstant: 25),
+            roubleMarkLabel.bottomAnchor.constraint(equalTo: priceTextField.bottomAnchor),
+            roubleMarkLabel.trailingAnchor.constraint(equalTo: priceTextField.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            roubleMarkLabelTwo.topAnchor.constraint(equalTo: prepaymentTextFieldValue.topAnchor),
+            roubleMarkLabelTwo.widthAnchor.constraint(equalToConstant: 25),
+            roubleMarkLabelTwo.bottomAnchor.constraint(equalTo: prepaymentTextFieldValue.bottomAnchor),
+            roubleMarkLabelTwo.trailingAnchor.constraint(equalTo: prepaymentTextFieldValue.trailingAnchor)
         ])
         
         
@@ -292,6 +308,7 @@ class InfoElementView: UIView {
         print("Percent \(stringPercent)")
         let prepaymentValue = (stringValue * stringPercent / 100)
         prepaymentTextFieldValue.text = formatter.string(from: NSNumber(value: prepaymentValue))
+        
     }
     let percentFormatter: NumberFormatter = {
         let f = NumberFormatter()
@@ -408,6 +425,11 @@ extension InfoElementView: UITextFieldDelegate {
                     return false
             
         }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 }

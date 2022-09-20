@@ -8,9 +8,17 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    
+    var element: CalculationModel? 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+     
+       
     }
+    
+ 
 }
+
