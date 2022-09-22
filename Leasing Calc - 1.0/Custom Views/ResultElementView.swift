@@ -132,7 +132,7 @@ class ResultElemetView: UIView {
         layer.cornerRadius = 10
     }
     
-    private func setupSubViews() {
+    func setupSubViews() {
         addSubview(nameLabel)
         addSubview(fullPriceNameLabel)
         addSubview(monthPaymentNameLabel)
@@ -150,7 +150,7 @@ class ResultElemetView: UIView {
         addSubview(spacerFour)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
